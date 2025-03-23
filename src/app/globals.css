@@ -1,0 +1,20 @@
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Galmuri11", sans-serif;
+
+  height: 100vh;
+  background: url("https://i.imgur.com/V35BBN0.png") no-repeat;
+  background-size: cover;
+}
+
+button:hover {
+  cursor: pointer;
+}

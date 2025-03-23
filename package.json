@@ -1,0 +1,38 @@
+{
+  "name": "random-pokemon-card",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.0.4",
+    "@react-three/fiber": "^9.1.0",
+    "@tanstack/react-query": "^5.69.0",
+    "gray-matter": "^4.0.3",
+    "maath": "^0.10.8",
+    "next": "15.2.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "three": "^0.174.0",
+    "wouter": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.23",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@types/three": "^0.174.0",
+    "eslint": "^9.21.0",
+    "eslint-config-next": "15.2.1",
+    "eslint-config-prettier": "^10.0.2",
+    "eslint-plugin-prettier": "^5.2.3",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.2"
+  }
+}
