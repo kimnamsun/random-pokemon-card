@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { Pokemon } from "@/@types/pokemon";
-import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
+import Pokeball from "../Pokeball";
 import PokemonCard from "../PokemonCard";
 
 type Props = {
@@ -14,6 +14,8 @@ type Props = {
 const PokemonCanvas = ({ pokemon }: Props) => {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
+  const [showPokeball, setShowPokeball] = useState(true);
+  const [showCard, setShowCard] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -42,12 +44,22 @@ const PokemonCanvas = ({ pokemon }: Props) => {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleAnimationComplete = () => {
+    setShowPokeball(false);
+    setShowCard(true);
+  };
+
   return (
     <>
       {loading ? (
         <div className="flex h-full w-full flex-col items-center justify-center">
-          <h1 className="mb-4 text-xl font-bold sm:text-2xl">
-            포켓몬 카드를 뽑는 중입니다...
+          <img
+            src="/loading.gif"
+            alt="loading"
+            className="h-15 w-16 sm:h-24 sm:w-24"
+          />
+          <h1 className="mb-4 mt-6 text-xl font-bold sm:text-2xl">
+            잠시만 기다려주세요...
           </h1>
 
           <div className="flex w-full justify-center">
@@ -60,16 +72,14 @@ const PokemonCanvas = ({ pokemon }: Props) => {
           </div>
         </div>
       ) : (
-        <div className="h-screen w-screen">
-          <Canvas>
-            <PokemonCard pokemon={pokemon} />
-            <OrbitControls
-              maxAzimuthAngle={Math.PI}
-              dampingFactor={0.1}
-              rotateSpeed={1}
-            />
-          </Canvas>
-        </div>
+        <>
+          {showPokeball && (
+            <Canvas>
+              <Pokeball onAnimationComplete={handleAnimationComplete} />
+            </Canvas>
+          )}
+          {showCard && <PokemonCard pokemon={pokemon} />}
+        </>
       )}
     </>
   );
