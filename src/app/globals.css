@@ -11,7 +11,7 @@ body {
   font-family: "Galmuri11", sans-serif;
 
   height: 100vh;
-  background: url("https://i.imgur.com/V35BBN0.png") no-repeat;
+  background: url("/background.png") no-repeat;
   background-size: cover;
 }
 
