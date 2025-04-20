@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Pokemon } from "@/@types/pokemon";
 
-import colors from "@/app/constants/typeColor";
+import colors from "@/app/constants/type";
 
 type Props = {
   pokemon: Pokemon;
@@ -11,11 +11,10 @@ const PokemonCard = ({ pokemon }: Props) => {
   const cardRef = useRef(null);
 
   const typeColors = pokemon.enTypes.map(
-    (type) =>
-      colors[type.toLowerCase() as keyof typeof colors] || colors.unknown
+    (type) => colors[type] || colors.Unknown
   );
 
-  const primaryColor = typeColors[0] || colors.unknown;
+  const primaryColor = typeColors[0] || colors.Unknown;
   const secondaryColor = typeColors[1] || null;
 
   const getGradient = (direction: "right" | "bottom") => {
@@ -42,9 +41,7 @@ const PokemonCard = ({ pokemon }: Props) => {
                   key={index}
                   className="mr-2 flex items-center justify-center rounded-full px-2 text-base text-white transition-all duration-200 hover:bg-opacity-80"
                   style={{
-                    backgroundColor:
-                      colors[type.toLocaleLowerCase() as keyof typeof colors] ||
-                      colors.unknown,
+                    backgroundColor: colors[type] || colors.Unknown,
                   }}
                 >
                   {pokemon.types[index]}
