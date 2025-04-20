@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import Image from "next/image";
 import { Pokemon } from "@/@types/pokemon";
 
 import colors from "@/app/constants/type";
@@ -60,9 +61,11 @@ const PokemonCard = ({ pokemon }: Props) => {
               border: `0.5rem solid ${primaryColor}`,
             }}
           >
-            <img
+            <Image
               src={pokemon.image}
               alt={pokemon.name}
+              width={128}
+              height={128}
               className="h-20 w-20 object-contain"
             />
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
 import { Pokemon } from "@/@types/pokemon";
 import { Canvas } from "@react-three/fiber";
 
@@ -52,7 +53,9 @@ const Home = () => {
     <>
       {loading ? (
         <div className="flex h-full w-full flex-col items-center justify-center">
-          <img
+          <Image
+            width={96}
+            height={96}
             src="/loading.gif"
             alt="loading"
             className="h-15 w-16 sm:h-24 sm:w-24"
