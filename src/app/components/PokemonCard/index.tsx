@@ -12,7 +12,7 @@ const PokemonCard = ({ pokemon }: Props) => {
 
   const typeColors = pokemon.enTypes.map(
     (type) =>
-      colors[type.toLocaleLowerCase() as keyof typeof colors] || colors.unknown
+      colors[type.toLowerCase() as keyof typeof colors] || colors.unknown
   );
 
   const primaryColor = typeColors[0] || colors.unknown;
@@ -28,7 +28,7 @@ const PokemonCard = ({ pokemon }: Props) => {
     <div className="pointer-events-none flex h-screen items-center justify-center">
       <div
         ref={cardRef}
-        className="animate-float h-96 w-72 rounded-md p-2.5 shadow-[0_4px_12px_rgba(0,0,0,0.5)] transition-all duration-100 ease-in-out"
+        className="h-96 w-72 animate-float rounded-md p-2.5 shadow-[0_4px_12px_rgba(0,0,0,0.5)] transition-all duration-100 ease-in-out"
         style={{
           background: getGradient("bottom"),
           animationDelay: "0.2s",
