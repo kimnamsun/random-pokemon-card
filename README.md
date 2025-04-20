@@ -2,7 +2,7 @@
 
 ![preview](https://random-pokemon-card.vercel.app/preview.png)
 
-🛠️ Stacks
+## 🛠️ Stacks
 
 - Next.js
 - React
@@ -11,11 +11,11 @@
 - @react-three/fiber
 - Vercel
 
-📅 Development Period
+## 📅 Development Period
 
 - 2025.03.25
 
-🎮 Getting Started
+## 🎮 Getting Started
 
 ```bash
 git clone git@github.com:kimnamsun/random-pokemon-card.git
