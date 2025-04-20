@@ -18,9 +18,7 @@ const Pokeball = ({ onAnimationComplete }: Props) => {
   const group = useRef<THREE.Group | null>(null);
   const mixer = useRef<THREE.AnimationMixer>(null);
 
-  const { scene, animations } = useGLTF("/pokeball_loader.glb");
-  // const { scene, animations } = useGLTF("/pokeball_animated.glb");
-  // const { scene, animations } = useGLTF("/pokemon_ball.glb");
+  const { scene, animations } = useGLTF("/pokeball.glb");
 
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -92,9 +90,6 @@ const Pokeball = ({ onAnimationComplete }: Props) => {
         position={[0, -1, 0]}
         scale={[22, 21, 22]}
         rotation={[0.1, 0.1, 0]}
-        // scale={[5, 5, 5]}
-        // rotation={[0, Math.PI + -(Math.PI / 8), 0]}
-        // onClick={handleClick}
       >
         <primitive object={scene} />
       </group>
